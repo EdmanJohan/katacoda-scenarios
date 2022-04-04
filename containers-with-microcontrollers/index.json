@@ -33,7 +33,10 @@
       "text": "finish.md"
     }
   },
-  "environment": {},
+  "environment": {
+    "uilayout": "editor-terminal",
+    "hideHiddenFiles": true
+  },
   "backend": {
     "imageid": "ubuntu:2004"
   }
