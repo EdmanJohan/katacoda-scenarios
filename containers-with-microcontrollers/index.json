@@ -6,8 +6,7 @@
   "details": {
     "intro": {
       "title": "Containers on Microcontrollers",
-      "courseData": "background.sh",
-      "code": "foreground.sh",
+      "code": "background.sh",
       "text": "intro.md"      
     },
     "steps": [
