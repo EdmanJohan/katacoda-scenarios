@@ -7,9 +7,8 @@ The only thing happening currently is, that a thread is created, that gets execu
 
 You can execute it and see for yourself.
 
-```c
-cd Femto-Container_tutorials/tutorial_helloworld 
-make all term
+```sh
+make -C Femto-Container_tutorials/tutorial_helloworld  all term
 ```{{execute interrupt}}
 
 In the following steps we will adjust the thread to execute a container, that runs code in an isolated environment. 
@@ -42,8 +41,8 @@ bpf_t bpf = {
         .application_len = sizeof(helloworld_bin),
         .stack = _stack,
         .stack_size = sizeof(_stack),
-};
-bpf_setup(&bpf);
+    };
+    bpf_setup(&bpf);
 </pre>
 
 A container has a few attributes:
@@ -99,7 +98,7 @@ that is executed in the container, even if it is not used.
 
 <pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(7)">
 int64_t result;
-bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
+	bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
 </pre>
 
 Now it is time to create the program that shall run within the container
@@ -121,8 +120,14 @@ Note: The "bpf_printf()" expects a string constant.
 
 <pre class="file" data-filename="./tutorial_helloworld/container/helloworld/helloworld.c" data-target="insert" data-marker="//placeholder(9)">
 const char print_str[] = "Hello from container\n";
-bpf_printf(print_str);
+	bpf_printf(print_str);
 </pre>
+
+Let's compile the helloworld program!
+
+```sh
+make -C Femto-Container_tutorials/tutorial_helloworld/container/helloworld
+```{{execute interrupt}}
 
 ### 10. Add program binary to main program
 
@@ -132,6 +137,6 @@ Finally we need to add the compiled binary to the main program by specifying it 
 BLOBS += container/helloworld/helloworld.bin
 </pre>
 
-```
-
-```{{copy}}
+```sh
+make -C Femto-Container_tutorials/tutorial_helloworld all term
+```{{execute interrupt}}
