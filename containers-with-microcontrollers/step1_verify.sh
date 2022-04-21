@@ -1,3 +1,3 @@
 #!/bin/bash
 
-[ -d /opt/.backgroundfinished ] && echo "done"
+[ -e /opt/.backgroundfinished ] && echo "done"
