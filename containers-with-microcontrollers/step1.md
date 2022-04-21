@@ -18,3 +18,6 @@ Run the following command:
 ```sh
 make term -C tutorial_1
 ```{{execute}}
+
+Note: If you cannot continue immediately, this is because the installation of the dependencies has not yet finished.
+Try again, once you see new files in the code editor.

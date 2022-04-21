@@ -22,7 +22,8 @@
       {
         "title": "Hello World in Femto-Container in RIOT OS Thread",
         "courseData": "step2_background.sh",
-        "text": "step2.md"
+        "text": "step2.md",
+        "verify": "step2_verify.sh"
       },
       {
         "title": "Advanced: Key value store",
