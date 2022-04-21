@@ -20,7 +20,7 @@ Each step holds holds code that needs to be inserted for the placeholder with th
 
 First, we need to include the header for using the bpf subsystem within RIOT OS, which implements everything needed to work with femto-containers.
 
-<pre class="file" data-filename="./tutorial_helloworld/app.js" data-target="insert" data-marker="placeholder(1)">
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(1)">
 #include "bpf.h"
 </pre>
 
@@ -28,7 +28,7 @@ First, we need to include the header for using the bpf subsystem within RIOT OS,
 
 Before we can use any functionality from the bpf subsystem, we need to initialize its infrastructure.
 
-<pre class="file" data-filename="./tutorial_helloworld/app.js" data-target="insert" data-marker="placeholder(2)">
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(2)">
 bpf_init();
 </pre>
 
@@ -36,7 +36,7 @@ bpf_init();
 
 Now we create our container environment.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(3)">
 bpf_t bpf = {
         .application = helloworld_bin,
         .application_len = sizeof(helloworld_bin),
@@ -44,9 +44,9 @@ bpf_t bpf = {
         .stack_size = sizeof(_stack),
 };
 bpf_setup(&bpf);
-```{{copy}}
+</pre>
 
-A container has a few attributes.
+A container has a few attributes:
 
 - *.application* holds the binary of the code that the container shall execute. "helloworld_bin" is not yet existing. We will tackle this later when we'll create the containerized application.
 - *.stack* holds a previously allocated memory space that the container will be working with. This stack will be created in the next step.
@@ -56,9 +56,9 @@ A container has a few attributes.
 Just as in the tutorials by Koen Zandberg, our container gets a memory space of 512 bytes.
 Code that is running within the container can only use that block of memory, which assures the isolation aspect of containers.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(4)">
 static uint8_t _stack[512] = { 0 };
-```{{copy}}
+</pre>
 
 ### 5. Add binary for executable container code
 
@@ -66,9 +66,9 @@ The application "helloworld_bin" must still be created.
 We will later find it as a constant byte array in the following header.
 This step might be confusing now, but we'll come back to this later to clear it up.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(5)">
 #include "blob/container/helloworld/helloworld.bin.h"
-```{{copy}}
+</pre>
 
 ### 6. Get container from thread argument
 
@@ -78,9 +78,9 @@ we can not define them as global variables. Thus, they must be given to the thre
 
 In this step we make sure to correctly dereference the void pointer that is given to the thread function as parameter.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(6)">
 bpf_t * bpf = (bpf_t *) arg;
-```{{copy}}
+</pre>
 
 Of course, we also have to make sure, that we actually pass the bpf container, when we create the thread.
 For that, we need to adjust the 6th parameter of the thread_create function, as shown below.
@@ -97,10 +97,10 @@ Last but not least, we add the command "bpf_execute_ctx()" to execute the contai
 At the current state of the femto container project it is necessary to have a variable, to store the return value of the code, 
 that is executed in the container, even if it is not used.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(7)">
 int64_t result;
 bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
-```{{copy}}
+</pre>
 
 Now it is time to create the program that shall run within the container
 `tutorial_helloworld/container/helloworld/helloworld.c`{{open}}.
@@ -110,24 +110,28 @@ Now it is time to create the program that shall run within the container
 Since the code that is running within the container is interpreted, we can only use functions that have already been implemented in the interpreter.
 Those can be found in the following file.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/container/helloworld/helloworld.c" data-target="insert" data-marker="//placeholder(8)">
 #include "bpf/bpfapi/helpers.h"
-```{{copy}}
+</pre>
 
 ### 9. Write program code using the bpf helper functions
 
 Our program is supposed to only print a string to stdio.
 Note: The "bpf_printf()" expects a string constant.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/container/helloworld/helloworld.c" data-target="insert" data-marker="//placeholder(9)">
 const char print_str[] = "Hello from container\n";
 bpf_printf(print_str);
-```{{copy}}
+</pre>
 
 ### 10. Add program binary to main program
 
 Finally we need to add the compiled binary to the main program by specifying it as blob in our Makefile. `tutorial_helloworld/Makefile`{{open}}.
 
-```
+<pre class="file" data-filename="./tutorial_helloworld/Makefile" data-target="insert" data-marker="#placeholder(10)">
 BLOBS += container/helloworld/helloworld.bin
+</pre>
+
+```
+
 ```{{copy}}

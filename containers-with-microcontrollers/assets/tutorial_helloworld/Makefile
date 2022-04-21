@@ -12,6 +12,7 @@ USEMODULE += bpf
 USEMODULE += ztimer_usec
 
 # (10) Use the compiled helloworld.bin as binary object in the built
+#placeholder(10)
 
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the
