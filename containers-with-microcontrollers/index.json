@@ -11,21 +11,21 @@
     },
     "intro": {
       "text": "intro.md",
-      "courseData": "background.sh",
-      "verify": "intro_verify.sh"
+      "courseData": "background.sh"
     },
     "steps": [
       {
-        "title": "Step 1",
-        "text": "step1.md"
+        "title": "The Basics",
+        "text": "step1.md",
+        "verify": "step1_verify.sh"
       },
       {
-        "title": "Step 2",
+        "title": "Hello World in Femto-Container in RIOT OS Thread",
         "courseData": "step2_background.sh",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Advanced: Key value store",
         "courseData": "step3_background.sh",
         "text": "step3.md"
       }

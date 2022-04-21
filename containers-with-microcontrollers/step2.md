@@ -1,5 +1,3 @@
-## Hello World in Femto-Container in RIOT OS Thread
-
 Now it is about time to create our own little container application.
 To save some time, we will work upon an existing code-skelleton that you can find here: `tutorial_helloworld/main.c`{{open}}.
 

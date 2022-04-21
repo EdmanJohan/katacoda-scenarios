@@ -1,4 +1,3 @@
-## The Basics
 In this first step, you'll learn the fundamentals of the development enviroment,  
 including the toolchain; the commands used to compile and run code.  
 
