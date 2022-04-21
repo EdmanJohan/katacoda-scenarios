@@ -4,7 +4,7 @@
 
 //placeholder
 
-/* (4) Add binary for executable container code
+/* (4) Add binary for executable container code */
 
 //placeholder
 
