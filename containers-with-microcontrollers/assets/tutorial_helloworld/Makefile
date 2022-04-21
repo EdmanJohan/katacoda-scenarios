@@ -11,8 +11,7 @@ RIOTBASE ?= $(CURDIR)/../RIOT
 USEMODULE += bpf
 USEMODULE += ztimer_usec
 
-# Use the compiled increment.bin as binary object in the built
-#BLOBS += container/helloworld/helloworld.bin
+# (10) Use the compiled helloworld.bin as binary object in the built
 
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the

@@ -12,13 +12,13 @@
 #include "thread.h"
 #include "ztimer.h"
 
-/* (3) Add pre-allocated stack for the virtual machine */
+/* (5) Add pre-allocated stack for the virtual machine */
 
 //placeholder
 
 static void *container_thread(void *arg) {
 
-    /* (5) Get container from thread argument */
+    /* (6) Get container from thread argument */
 
     //placeholder
 
@@ -26,7 +26,7 @@ static void *container_thread(void *arg) {
 	  printf("Hello from thread\n");
         ztimer_sleep(ZTIMER_USEC, 500000);
 
-	  /* (6) Execute container */
+	  /* (7) Execute container */
 
 	  //placeholder
 
@@ -36,13 +36,13 @@ static void *container_thread(void *arg) {
 }
 
 int main(void) {
-     /* (5) Initialize the bpf subsystem */
+     /* (2) Initialize the bpf subsystem */
 
     //placeholder
 
     puts("All up, running the Femto-Container application now");
 
-    /* (2) Define the container */
+    /* (3) Define the container */
 
     //placeholder
 
