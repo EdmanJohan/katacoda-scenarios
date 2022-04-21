@@ -5,8 +5,10 @@
   "time": "30 minutes",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "courseData": "background.sh"
+      "title": "Containers on Microcontrollers",
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"      
     },
     "steps": [
       {
