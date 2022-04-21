@@ -37,3 +37,58 @@ bpf_t bpf_system = {
     };
 bpf_setup(&bpf_system);
 ```{{copy}}
+
+### 4. Add binary for executable container code
+
+```c
+#include "blob/container/helloworld/helloworld.bin.h"
+```{{copy}}
+
+### 5. Add pre-allocated stack for the virtual machine
+
+```c
+static uint8_t _stack[512] = { 0 };
+```{{copy}}
+
+### 6. Get container from thread argument
+
+```c
+bpf_t * bpf = (bpf_t *) arg;
+```{{copy}}
+
+```c
+thread_create(stack, sizeof(stack),
+        THREAD_PRIORITY_MAIN - 1, THREAD_CREATE_STACKTEST,
+        container_thread, &bpf, "container");
+```{{copy}}
+
+### 7. Execute container
+
+```c
+int64_t result;
+bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
+```{{copy}}
+
+Now it is time to create the program that shall run within the container
+`tutorial_helloworld/container/helloworld/helloworld.c`{{open}}.
+
+### 8. Inclue BPF Helper function library
+
+```c
+#include "bpf/bpfapi/helpers.h"
+```{{copy}}
+
+### 9. Write program code using the bpf helper functions
+
+```c
+const char print_str[] = "Hello from container\n";
+bpf_printf(print_str);
+```{{copy}}
+
+### 10. Add program binary to main program
+
+Finally we need to add the compiled binary to the main program by specifying it as blob in our Makefile. `tutorial_helloworld/Makefile`{{open}}.
+
+```
+BLOBS += container/helloworld/helloworld.bin
+```{{copy}}
