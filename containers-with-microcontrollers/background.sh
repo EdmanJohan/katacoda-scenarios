@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install llvm clang python3 python3-pip git gcc-arm-none-eabi make gcc-multilib openocd gdb-multiarch doxygen wget unzip python3-serial
+sudo apt install -y llvm clang python3 python3-pip git gcc-arm-none-eabi make gcc-multilib openocd gdb-multiarch doxygen wget unzip python3-serial
 pip3 install pyelftools
 
 git clone https://github.com/future-proof-iot/Femto-Container_tutorials.git
