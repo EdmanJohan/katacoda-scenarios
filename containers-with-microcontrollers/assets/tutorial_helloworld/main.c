@@ -2,11 +2,11 @@
 
 /* (1) Add bpf libary header */
 
-//placeholder
+//placeholder(1)
 
 /* (5) Add binary for executable container code */
 
-//placeholder
+//placeholder(5)
 
 #include "sched.h"
 #include "thread.h"
@@ -14,13 +14,13 @@
 
 /* (4) Add pre-allocated stack for the virtual machine */
 
-//placeholder
+//placeholder(4)
 
 static void *container_thread(void *arg) {
 
     /* (6) Get container from thread argument */
     
-    //placeholder
+    //placeholder(6)
 
     while (1) {
 	    printf("Hello from thread\n");
@@ -28,7 +28,7 @@ static void *container_thread(void *arg) {
         
         /* (7) Execute container */
 
-	    //placeholder
+	    //placeholder(7)
     }
     
     return arg;
@@ -37,13 +37,13 @@ static void *container_thread(void *arg) {
 int main(void) {
     /* (2) Initialize the bpf subsystem */
 
-    //placeholder
+    //placeholder(2)
 
     puts("All up, running the Femto-Container application now");
 
     /* (3) Define the container */
 
-    //placeholder
+    //placeholder(3)
 
     /* Create threads for containers */
     static char stack[THREAD_STACKSIZE_DEFAULT+THREAD_EXTRA_STACKSIZE_PRINTF];

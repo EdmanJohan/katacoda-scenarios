@@ -20,17 +20,17 @@ Each step holds holds code that needs to be inserted for the placeholder with th
 
 First, we need to include the header for using the bpf subsystem within RIOT OS, which implements everything needed to work with femto-containers.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/app.js" data-target="insert" data-marker="placeholder(1)">
 #include "bpf.h"
-```{{copy}}
+</pre>
 
 ### 2. Initialize the bpf subsystem
 
 Before we can use any functionality from the bpf subsystem, we need to initialize its infrastructure.
 
-```c
+<pre class="file" data-filename="./tutorial_helloworld/app.js" data-target="insert" data-marker="placeholder(2)">
 bpf_init();
-```{{copy}}
+</pre>
 
 ### 3. Create and setup the container environment
 

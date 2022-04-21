@@ -43,6 +43,7 @@
   "environment": {
     "uilayout": "editor-terminal",
     "uieditorpath": "/root/Femto-Container_tutorials",
+    "uisettings": "c",
     "hideHiddenFiles": true
   },
   "backend": {
