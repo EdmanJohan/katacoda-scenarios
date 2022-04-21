@@ -62,7 +62,9 @@ static uint8_t _stack[512] = { 0 };
 
 ### 5. Add binary for executable container code
 
-This step might be a bit confusing at this moment. 
+The application "helloworld_bin" must still be created.
+We will later find it as a constant byte array in the following header.
+This step might be confusing now, but we'll come back to this later to clear it up.
 
 ```c
 #include "blob/container/helloworld/helloworld.bin.h"
@@ -70,9 +72,18 @@ This step might be a bit confusing at this moment.
 
 ### 6. Get container from thread argument
 
+We want to execute our container from within a RIOT OS thread.
+Since we want to be able to assign applications that run inside containers dynamicly,
+we can not define them as global variables. Thus, they must be given to the thread as parameter.
+
+In this step we make sure to correctly dereference the void pointer that is given to the thread function as parameter.
+
 ```c
 bpf_t * bpf = (bpf_t *) arg;
 ```{{copy}}
+
+Of course, we also have to make sure, that we actually pass the bpf container, when we create the thread.
+For that, we need to adjust the 6th parameter of the thread_create function, as shown below.
 
 ```c
 thread_create(stack, sizeof(stack),
@@ -82,6 +93,10 @@ thread_create(stack, sizeof(stack),
 
 ### 7. Execute container
 
+Last but not least, we add the command "bpf_execute_ctx()" to execute the container to the thread callback function body.
+At the current state of the femto container project it is necessary to have a variable, to store the return value of the code, 
+that is executed in the container, even if it is not used.
+
 ```c
 int64_t result;
 bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
@@ -90,13 +105,19 @@ bpf_execute_ctx(bpf, NULL, sizeof(NULL), &result);
 Now it is time to create the program that shall run within the container
 `tutorial_helloworld/container/helloworld/helloworld.c`{{open}}.
 
-### 8. Inclue BPF Helper function library
+### 8. Include BPF Helper function library
+
+Since the code that is running within the container is interpreted, we can only use functions that have already been implemented in the interpreter.
+Those can be found in the following file.
 
 ```c
 #include "bpf/bpfapi/helpers.h"
 ```{{copy}}
 
 ### 9. Write program code using the bpf helper functions
+
+Our program is supposed to only print a string to stdio.
+Note: The "bpf_printf()" expects a string constant.
 
 ```c
 const char print_str[] = "Hello from container\n";
