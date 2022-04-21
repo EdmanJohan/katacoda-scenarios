@@ -153,7 +153,7 @@ make -C Femto-Container_tutorials/tutorial_helloworld all
 ```{{execute interrupt}}
 
 This means we can finally see where our program is stored.
-`tutorial_helloworld/bin/native/application_bpf_tutorial/blobs/blob/container/helloworld/heloworld.bin.h`{{open}}.
+`tutorial_helloworld/bin/native/application_bpf_tutorial/blobs/blob/container/helloworld/helloworld.bin.h`{{open}}.
 
 This byte array "helloworld_bin" can of course also be dynamically created. I. e. after fetching it from some server.
 
