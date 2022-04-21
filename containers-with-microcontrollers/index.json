@@ -6,7 +6,7 @@
   "details": {
     "intro": {
       "title": "Containers on Microcontrollers",
-      "code": "background.sh",
+      "courseData": "background.sh",
       "text": "intro.md"      
     },
     "steps": [
@@ -37,6 +37,7 @@
   },
   "environment": {
     "uilayout": "vscode-terminal-split",
+    "uieditorpath": "/root/Femto-Container_tutorials",
     "hideHiddenFiles": true
   },
   "backend": {
