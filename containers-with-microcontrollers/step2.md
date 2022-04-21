@@ -1,7 +1,7 @@
 ## Hello World in Femto-Container in RIOT OS Thread
 
 Now it is about time to create our own little container application.
-To save you some time, we will work upon an existing code-skelleton that you can find here: `README.md`{{open}}.
+To save you some time, we will work upon an existing code-skelleton that you can find here: `tutorial_helloworld/main.c`{{open}}.
 
 The only thing happenig currently is, that we are creating a thread, that gets executed by the RIOT OS scheduler. This thread writes "Hello from thread" to stdout and then waits for 500ms. 
 

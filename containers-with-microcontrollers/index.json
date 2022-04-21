@@ -10,12 +10,12 @@
       ] 
     },
     "intro": {
-      "text": "intro.md"      
+      "text": "intro.md",
+      "courseData": "background.sh"
     },
     "steps": [
       {
         "title": "Step 1",
-        "courseData": "background.sh",
         "text": "step1.md"
       },
       {
@@ -41,7 +41,7 @@
     }
   },
   "environment": {
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "editor-terminal",
     "uieditorpath": "/root/Femto-Container_tutorials",
     "hideHiddenFiles": true
   },
