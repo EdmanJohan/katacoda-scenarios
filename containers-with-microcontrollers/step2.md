@@ -127,7 +127,10 @@ Let's compile the helloworld program and look at the compile binary file!
 
 ```sh
 make -C Femto-Container_tutorials/tutorial_helloworld/container/helloworld
-./Femto-Container_tutorials/RIOT/dist/tools/rbpf/gen_rbf.py dump tutorial_helloworld/container/helloworld/helloworld.bin
+```{{execute interrupt}}
+
+```sh
+./Femto-Container_tutorials/RIOT/dist/tools/rbpf/gen_rbf.py dump Femto-Container_tutorials/tutorial_helloworld/container/helloworld/helloworld.bin
 ```{{execute interrupt}}
 
 In the next step those binary symbols will get transfered to the const char array "helloworld_bin", that we encountered in step 4.
@@ -150,7 +153,7 @@ make -C Femto-Container_tutorials/tutorial_helloworld all
 ```{{execute interrupt}}
 
 This means we can finally see where our program is stored.
-`Femto-Container_tutorials/tutorial_helloworld/bin/native/application_bpf_tutorial/blobs/blob/container/helloworld/heloworld.bin.h`{{open}}.
+`tutorial_helloworld/bin/native/application_bpf_tutorial/blobs/blob/container/helloworld/heloworld.bin.h`{{open}}.
 
 This byte array "helloworld_bin" can of course also be dynamically created. I. e. after fetching it from some server.
 
