@@ -52,7 +52,7 @@ A container has a few attributes:
 
 ### 4. Add pre-allocated stack for the virtual machine
 
-Just as in the tutorials by Koen Zandberg, our container gets a memory space of 512 bytes.
+Dictated by the eBPF specification, our container gets a memory space of 512 bytes.
 Code that is running within the container can only use that block of memory, which assures the isolation aspect of containers.
 
 <pre class="file" data-filename="./tutorial_helloworld/main.c" data-target="insert" data-marker="//placeholder(4)">
@@ -123,20 +123,39 @@ const char print_str[] = "Hello from container\n";
 	bpf_printf(print_str);
 </pre>
 
-Let's compile the helloworld program!
+Let's compile the helloworld program and look at the compile binary file!
 
 ```sh
 make -C Femto-Container_tutorials/tutorial_helloworld/container/helloworld
+./Femto-Container_tutorials/RIOT/dist/tools/rbpf/gen_rbf.py dump tutorial_helloworld/container/helloworld/helloworld.bin
 ```{{execute interrupt}}
+
+In the next step those binary symbols will get transfered to the const char array "helloworld_bin", that we encountered in step 4.
 
 ### 10. Add program binary to main program
 
-Finally we need to add the compiled binary to the main program by specifying it as blob in our Makefile. `tutorial_helloworld/Makefile`{{open}}.
+This is done fully automatically by the routine in the Makefile for the main application: `tutorial_helloworld/Makefile`{{open}}.
+We only have to add the respective binary as a blob to the Makefile.
 
 <pre class="file" data-filename="./tutorial_helloworld/Makefile" data-target="insert" data-marker="#placeholder(10)">
 BLOBS += container/helloworld/helloworld.bin
 </pre>
 
+## Execution
+
+Now, that everything is set up, we can finally build the program.
+
 ```sh
-make -C Femto-Container_tutorials/tutorial_helloworld all term
+make -C Femto-Container_tutorials/tutorial_helloworld all
+```{{execute interrupt}}
+
+This means we can finally see where our program is stored.
+`Femto-Container_tutorials/tutorial_helloworld/bin/native/application_bpf_tutorial/blobs/blob/container/helloworld/heloworld.bin.h`{{open}}.
+
+This byte array "helloworld_bin" can of course also be dynamically created. I. e. after fetching it from some server.
+
+In the final step, let's confirm that our program is running correctly.
+
+```sh
+make -C Femto-Container_tutorials/tutorial_helloworld term
 ```{{execute interrupt}}
