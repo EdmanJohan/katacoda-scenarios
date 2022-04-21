@@ -21,8 +21,8 @@ they don't have nearly enough processing power or resources.
 
 The solution is called [Femto-Containers](https://arxiv.org/pdf/2106.12553.pdf), which are based on [Linux eBPF](https://ebpf.io/what-is-ebpf).  
 
-What are then the additional benefits? Mainly, you can start applying many many
-DevOps use-cases on IoT microcontrollers. You can imagine the following scenarios,
+What are then the additional benefits? Mainly the fact that you can start applying
+DevOps workflows and use-cases to embedded microcontrollers or IoT devices. You can imagine the following scenarios,
 1. A device in the field misbehaves; can test the application in a containerized and controlled environment.
 2. You can allow 3rd party code to run, by sandboxing and isolating applications. Only giving access to e.g. sensors to allowed applications.
 3. Deploy changes to workloads without flashing new firmware with OTA Updates.
