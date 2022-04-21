@@ -3,6 +3,9 @@ That's it. Well done!
 By now you should have learned a bit about how it is to write and run code on microcontrollers,
 and a basic understanding of containers on microcontrollers, and what benefits they can bring.
 
+While these applications ran in a virtual microcontroller provided by RIOT-OS, it could  
+just as well have been on an actual one.
+
 ## Learn more
 If you want to learn more about the different material and software stacks that have been used in this scenario, 
 you can find links to all the material here. 

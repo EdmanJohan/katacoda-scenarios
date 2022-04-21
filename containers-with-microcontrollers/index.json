@@ -1,5 +1,5 @@
 {
-  "title": "Containerizing with your microcontroller",
+  "title": "Containerizing applications on your microcontroller",
   "description": "A guide on how to run FemtoContainers on your Microcontroller",
   "difficulty": "Intermediate",
   "time": "30 minutes",
@@ -10,13 +10,12 @@
       ] 
     },
     "intro": {
-      "title": "Containers on Microcontrollers",
-      "courseData": "background.sh",
       "text": "intro.md"      
     },
     "steps": [
       {
         "title": "Step 1",
+        "courseData": "background.sh",
         "text": "step1.md"
       },
       {
