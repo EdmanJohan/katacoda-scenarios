@@ -4,7 +4,7 @@
 
 //placeholder
 
-/* (4) Add binary for executable container code */
+/* (5) Add binary for executable container code */
 
 //placeholder
 
@@ -12,31 +12,30 @@
 #include "thread.h"
 #include "ztimer.h"
 
-/* (5) Add pre-allocated stack for the virtual machine */
+/* (4) Add pre-allocated stack for the virtual machine */
 
 //placeholder
 
 static void *container_thread(void *arg) {
 
     /* (6) Get container from thread argument */
-
+    
     //placeholder
 
     while (1) {
-	  printf("Hello from thread\n");
+	    printf("Hello from thread\n");
         ztimer_sleep(ZTIMER_USEC, 500000);
+        
+        /* (7) Execute container */
 
-	  /* (7) Execute container */
-
-	  //placeholder
-
+	    //placeholder
     }
     
     return arg;
 }
 
 int main(void) {
-     /* (2) Initialize the bpf subsystem */
+    /* (2) Initialize the bpf subsystem */
 
     //placeholder
 
@@ -48,6 +47,7 @@ int main(void) {
 
     /* Create threads for containers */
     static char stack[THREAD_STACKSIZE_DEFAULT+THREAD_EXTRA_STACKSIZE_PRINTF];
+
     thread_create(stack, sizeof(stack),
                 THREAD_PRIORITY_MAIN - 1, THREAD_CREATE_STACKTEST,
                 container_thread, NULL, "container");
