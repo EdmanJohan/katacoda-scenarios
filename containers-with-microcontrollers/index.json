@@ -4,6 +4,11 @@
   "difficulty": "Intermediate",
   "time": "30 minutes",
   "details": {
+    "assets": { 
+      "host01": [ 
+        {"file": "*", "target": "/root/assets"} 
+      ] 
+    },
     "intro": {
       "title": "Containers on Microcontrollers",
       "courseData": "background.sh",
