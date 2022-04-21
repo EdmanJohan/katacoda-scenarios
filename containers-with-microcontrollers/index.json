@@ -36,7 +36,6 @@
   },
   "environment": {
     "uilayout": "vscode-terminal-split",
-    "uieditorpath": "/root/tutorial",
     "hideHiddenFiles": true
   },
   "backend": {
