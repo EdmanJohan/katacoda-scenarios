@@ -1,7 +1,7 @@
 Now it is about time to create our own little container application.
 To save some time, we will work upon an existing code-skelleton that you can find here: `tutorial_helloworld/main.c`{{open}}.
 
-The only thing happening currently is, that a thread is created, that gets executed by the RIOT OS scheduler. This thread writes "Hello from thread" to stdout and then waits for 500ms. 
+The only thing happening currently is, that a thread is created, that gets executed by the RIOT OS scheduler. This thread writes "Hello from thread" to stdout and then waits for 500ms, before it repeats.
 
 You can execute it and see for yourself.
 
@@ -131,7 +131,7 @@ make -C Femto-Container_tutorials/tutorial_helloworld/container/helloworld
 ./Femto-Container_tutorials/RIOT/dist/tools/rbpf/gen_rbf.py dump Femto-Container_tutorials/tutorial_helloworld/container/helloworld/helloworld.bin
 ```{{execute interrupt}}
 
-In the next step those binary symbols will get transfered to the const char array "helloworld_bin", that we encountered in step 4.
+In the next step those binary symbols will get transfered to the constant byte array "helloworld_bin", that we encountered in step 4.
 
 ### 10. Add program binary to main program
 
