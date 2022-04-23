@@ -124,11 +124,11 @@ const char print_str[] = "Hello from container\n";
 Let's compile the helloworld program and look at the compiled binary file!
 
 ```sh
-make -C Femto-Container_tutorials/tutorial_helloworld/container/helloworld
+make -C tutorial_helloworld/container/helloworld
 ```{{execute interrupt}}
 
 ```sh
-./Femto-Container_tutorials/RIOT/dist/tools/rbpf/gen_rbf.py dump Femto-Container_tutorials/tutorial_helloworld/container/helloworld/helloworld.bin
+./RIOT/dist/tools/rbpf/gen_rbf.py dump Femto-Container_tutorials/tutorial_helloworld/container/helloworld/helloworld.bin
 ```{{execute interrupt}}
 
 In the next step, those binary symbols will get transferred to the constant byte array "helloworld_bin", that we encountered in step 4.
@@ -158,5 +158,5 @@ This byte array "helloworld_bin" can of course also be dynamically created. I. e
 In the final step, let's confirm that our program is running correctly.
 
 ```sh
-make -C Femto-Container_tutorials/tutorial_helloworld term
+make -C tutorial_helloworld term
 ```{{execute interrupt}}
