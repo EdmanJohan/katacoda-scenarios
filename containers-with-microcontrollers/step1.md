@@ -22,7 +22,7 @@ and of course, the `main.c` which is at the heart of the project,
 `tutorial_1/main.c`{{open}}
 
 Let's also take a look at the container workload that we will be running. This is defined in a subdirectory of our application.
-`tutorial_1/fc/main.c`{{open}}
+`tutorial_1/fc/increment.c`{{open}}
 
 But enough of staring at code, let's compile the project! 
 
