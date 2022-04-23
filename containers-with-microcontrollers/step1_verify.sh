@@ -1,2 +1,2 @@
 #!/bin/bash
-[ -d "./tutorial_1/bin" ]
+[ -d "./tutorial_1/bin" ] && echo "done"
