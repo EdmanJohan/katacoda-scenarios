@@ -6,7 +6,7 @@ The only thing happening currently is, that a thread is created, that gets execu
 You can execute it and see for yourself.
 
 ```sh
-make -C Femto-Container_tutorials/tutorial_helloworld  all term
+make -C tutorial_helloworld all term
 ```{{execute interrupt}}
 
 In the following steps, we will adjust the thread to execute a container, that runs code in an isolated environment. 
@@ -147,7 +147,7 @@ BLOBS += container/helloworld/helloworld.bin
 Now, that everything is set up, we can finally build the program.
 
 ```sh
-make -C Femto-Container_tutorials/tutorial_helloworld all
+make -C tutorial_helloworld all
 ```{{execute interrupt}}
 
 This means we can finally see where our program is stored.
