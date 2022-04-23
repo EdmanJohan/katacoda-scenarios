@@ -2,7 +2,7 @@
   "title": "Containerizing applications on your microcontroller",
   "description": "A guide on how to run FemtoContainers on your Microcontroller",
   "difficulty": "Intermediate",
-  "time": "30 minutes",
+  "time": "15-30 minutes",
   "details": {
     "assets": { 
       "host01": [ 
