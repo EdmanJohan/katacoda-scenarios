@@ -7,5 +7,3 @@ git clone https://github.com/future-proof-iot/Femto-Container_tutorials.git
 cd Femto-Container_tutorials
 git submodule init
 git submodule update
-
-echo "done" >> /opt/.backgroundfinished
