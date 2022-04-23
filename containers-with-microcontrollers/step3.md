@@ -61,9 +61,9 @@ The reference key for the fuel_rate is specified as a preprocessor define. This 
 Let's execute to see the program's behavior.
 
 ```sh
-make -C Femto-Container_tutorials/tutorial_lunarlander/container/system
-make -C Femto-Container_tutorials/tutorial_lunarlander/container/fuel
-make -C Femto-Container_tutorials/tutorial_lunarlander/ all term
+make -C tutorial_lunarlander/container/system
+make -C tutorial_lunarlander/container/fuel
+make -C tutorial_lunarlander/ all term
 ```{{execute interrupt}}
 
 Can you land on the moon safely?
