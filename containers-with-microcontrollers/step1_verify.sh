@@ -1,2 +1,2 @@
 #!/bin/bash
-[ -d "./tutorial_1/bin" ] && echo "done"
+[ -d "/root/Femto-Container_tutorials/tutorial_1/bin" ] && echo "done"
