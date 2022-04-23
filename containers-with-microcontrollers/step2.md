@@ -128,7 +128,7 @@ make -C tutorial_helloworld/container/helloworld
 ```{{execute interrupt}}
 
 ```sh
-./RIOT/dist/tools/rbpf/gen_rbf.py dump Femto-Container_tutorials/tutorial_helloworld/container/helloworld/helloworld.bin
+./RIOT/dist/tools/rbpf/gen_rbf.py dump tutorial_helloworld/container/helloworld/helloworld.bin
 ```{{execute interrupt}}
 
 In the next step, those binary symbols will get transferred to the constant byte array "helloworld_bin", that we encountered in step 4.
