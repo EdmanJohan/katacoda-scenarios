@@ -46,5 +46,5 @@ We will open an emulated terminal session to our "microcontroller" with the `mak
 make term -C tutorial_1
 ```{{execute}}
 
-This should show you a simple containered application running, that does nothing more exciting than take an input and increment it.
-Let's move on to something more exciting shall we!?
+This should show you a simple containered application running, that does nothing more exciting than take an input, increment it, and return the value.
+Let's move on to something more a bit more thrilling shall we?
