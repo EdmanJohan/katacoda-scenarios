@@ -20,14 +20,14 @@ We will investigate how the key-value store can be used, with a little example a
 
 ## Main program
 
-`tutorial_lunar/main.c`{{open}}.
+`tutorial_lunarlander/main.c`{{open}}
 
 This opens two threads, that run a Femto-container each. 
 Let's check out the applications that get hosted in them.
 
 ## System container
 
-`tutorial_lunar/container/system/system.c`{{open}}.
+`tutorial_lunarlander/container/system/system.c`{{open}}
 
 This containerized application emulates a rocket that is 64000m above the surface of the moon.
 The rocket has 7200l of fuel to ensure a safe landing. The parameter fuel_rate which gets fetched
@@ -39,7 +39,7 @@ bpf_fetch_global(FUEL_RATE, &fuel_rate);
 
 ## Fuel control container
 
-`tutorial_lunar/container/fuel/fuel.c`{{open}}
+`tutorial_lunarlander/container/fuel/fuel.c`{{open}}
 
 The fuel_rate gets set, by another containerized application. 
 
@@ -52,7 +52,7 @@ This is because the current implementation doesn't allow storing floating-point 
 
 ## Key values
 
-`tutorial_lunar/container/key_value_store.h`{{open}}
+`tutorial_lunarlander/container/key_value_store.h`{{open}}
 
 The reference key for the fuel_rate is specified as a preprocessor define. This way, we can have a good overview of which keys are used for what.
 
