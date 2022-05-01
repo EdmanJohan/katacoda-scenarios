@@ -2,7 +2,7 @@ In this first step, you'll learn the fundamentals of the development enviroment,
 
 We'll start by running a very simple containered application.
 
-The RIOT-OS ecosystem provides a very handy `native` mode, which allows you to emulate a microcontroller on your PC. This allows for very rapid development and prototyping, without any actual hardware! 
+The RIOT-OS ecosystem provides a very handy `native` mode. It allows you to emulate a microcontroller-like system on your PC with [dummy hardware](https://doc.riot-os.org/group__boards__native.html#autotoc_md552). This allows for very rapid development and prototyping, without any actual hardware.    
 
 Let's move into the proper directory shall we?
 ```sh
