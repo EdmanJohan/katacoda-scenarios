@@ -80,7 +80,7 @@ bpf_t * bpf = (bpf_t *) arg;
 </pre>
 
 Of course, we also have to make sure, that we actually pass the bpf container, when we create the thread.
-For that, we need to adjust the 6th parameter of the thread_create function, as shown below.
+For that, we need to adjust the 6th parameter of the thread_create function, on line 63-65, as shown below.
 
 ```c
 thread_create(stack, sizeof(stack),
